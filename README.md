@@ -68,6 +68,19 @@ Create a .env file and add:
 
 GROQ_API_KEY=your_groq_api_key
 
+
+Folder Structure for Your Project
+hear_and_heal_ai/
+├── chains/
+│   ├── image_analysis_chain.py
+│   ├── tts_chains.py
+|   ├── full_pipeline.py
+│   └── voice_transcription_chain.py
+├── app.py
+├── requirements.txt
+├── README.md
+
+
 Run the app
 
 python app.py
