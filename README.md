@@ -92,10 +92,10 @@ The system uses cutting-edge LLMs (LLaMA 4 Scout) integrated with speech recogni
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    USER INTERFACE (Gradio)                   │
-│         ┌──────────────────┬──────────────────┐              │
-│         │  Microphone Input │   Image Upload   │              │
-│         └────────┬──────────┴──────────┬───────┘              │
+│                    USER INTERFACE (Gradio)                  │
+│         ┌──────────────────┬──────────────────┐             │
+│         │  Microphone Input │   Image Upload   │            │
+│         └────────┬──────────┴──────────┬───────┘            │
 └────────────────┼──────────────────────┼────────────────────┘
                  │                      │
          ┌───────▼──────────────┬───────▼──────┐
@@ -104,51 +104,51 @@ The system uses cutting-edge LLMs (LLaMA 4 Scout) integrated with speech recogni
                  │                     │
 ┌────────────────┼─────────────────────┼──────────────────────┐
 │         PROCESSING PIPELINE (LangChain)                     │
-│                                                              │
-│  Step 1: Merge Inputs                                        │
+│                                                             │
+│  Step 1: Merge Inputs                                       │
 │  ┌──────────────────────────────────────────────────────┐   │
 │  │ Convert audio path & image path into unified format  │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                         ⬇                                    │
-│  Step 2: Transcription Chain                                 │
+│                         ⬇                                  │
+│  Step 2: Transcription Chain                                │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │ Audio File ──[Whisper Large V3]──> Transcription    │   │
+│  │ Audio File ──[Whisper Large V3]──> Transcription    │    │
 │  └──────────────────────────────────────────────────────┘   │
-│                         ⬇                                    │
-│  Step 3: Query Builder Chain                                 │
+│                         ⬇                                  │
+│  Step 3: Query Builder Chain                                │
 │  ┌──────────────────────────────────────────────────────┐   │
 │  │ System Prompt + Transcription = Medical Query        │   │
 │  │ System Prompt: "Act as a professional doctor..." │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                         ⬇                                    │
-│  Step 4: Image Analysis Chain                                │
+│                         ⬇                                  │
+│  Step 4: Image Analysis Chain                               │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │ Image (Base64) + Query ──[LLaMA 4 Scout LLM]──>     │   │
+│  │ Image (Base64) + Query ──[LLaMA 4 Scout LLM]──>      │   │
 │  │ Medical Reasoning & Diagnosis                        │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                         ⬇                                    │
-│  Step 5: Prepare TTS Input                                   │
+│                         ⬇                                  │
+│  Step 5: Prepare TTS Input                                  │
 │  ┌──────────────────────────────────────────────────────┐   │
 │  │ Extract text response + metadata for TTS             │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                         ⬇                                    │
-│  Step 6: Text-to-Speech Chain                                │
+│                         ⬇                                  │
+│  Step 6: Text-to-Speech Chain                               │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │ Doctor's Advice ──[gTTS]──> Audio File (MP3)        │   │
+│  │ Doctor's Advice ──[gTTS]──> Audio File (MP3)         │   │
 │  └──────────────────────────────────────────────────────┘   │
-│                         ⬇                                    │
-│  Step 7: Output Extraction                                   │
+│                         ⬇                                  │
+│  Step 7: Output Extraction                                  │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │ Format & return: Transcription | Advice | Audio     │   │
+│  │ Format & return: Transcription | Advice | Audio      │   │
 │  └──────────────────────────────────────────────────────┘   │
-└───────────────────────┬──────────────────────────────────────┘
+└───────────────────────┬─────────────────────────────────────
                         │
         ┌───────────────┼───────────────┐
         │               │               │
-    ┌───▼──────┐   ┌───▼─────┐   ┌───▼──────┐
-    │ Transcrip │   │ Medical  │   │ Voice    │
-    │ tion Text │   │ Advice   │   │ Output   │
-    └───┬──────┘   └───┬─────┘   └───┬──────┘
+    ┌───▼──────┐    ┌───▼─────┐     ┌───▼──────┐
+    │ Transcrip │   │ Medical  │    │ Voice    │
+    │ tion Text │   │ Advice   │    │ Output   │
+    └───┬──────┘    └───┬─────┘    └───┬──────┘
         │               │             │
         └───────────────┼─────────────┘
                         │
@@ -792,16 +792,12 @@ Contributions are welcome! Please follow these guidelines:
 - Describe expected vs actual behavior
 
 ### Questions?
+- Email: [hemanthtempalli@gmail.com]
 
-- Open a GitHub Discussion
-- Email: [your-email@example.com]
-- Join our Discord community (if applicable)
 
 ---
 
-## 📄 License
 
-This project is licensed under the **MIT License** — see [LICENSE](LICENSE) file for details.
 
 **Summary:** You're free to use, modify, and distribute this project for personal or commercial purposes, with attribution.
 
@@ -821,12 +817,7 @@ This application is designed for **educational purposes only** and should NOT be
 
 ---
 
-## 📞 Support & Contact
 
-- **GitHub Issues**: [Report bugs and request features](https://github.com/yourusername/hear-and-heal-ai/issues)
-- **Email**: your-email@example.com
-- **Documentation**: This README + inline code comments
-- **Live Demo**: Available at [heroku-app-url.com] (if deployed)
 
 ---
 
@@ -841,7 +832,7 @@ This application is designed for **educational purposes only** and should NOT be
 
 ---
 
-**Built with ❤️ by AI Engineer** | Last Updated: May 2024 | Status: Production-Ready
+**Built with ❤️ by Hemanth Tempalli** 
 ↓
 Text-to-Speech (gTTS)
 ↓
